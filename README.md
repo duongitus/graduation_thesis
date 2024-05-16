@@ -5,3 +5,5 @@ https://docs.google.com/spreadsheets/d/19yALpYG8lvfqmi3mxassJJLJnxvhcD0A/edit?us
 https://www.overleaf.com/read/hhtrnggcpdtw#423d42 
 ## Link Slide:
 https://studenthcmusedu-my.sharepoint.com/:p:/g/personal/20120166_student_hcmus_edu_vn/EXizHPhqG4RBu4lcypXaTmYBPYvk-992bcGXIlAlrljW3w?e=e3qmQu
+## Link Overleaf Báo cáo - Cuốn:
+https://www.overleaf.com/read/zjhdvtgvcsqx#f70814
