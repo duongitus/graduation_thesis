@@ -7,3 +7,5 @@ https://www.overleaf.com/read/hhtrnggcpdtw#423d42
 https://studenthcmusedu-my.sharepoint.com/:p:/g/personal/20120166_student_hcmus_edu_vn/EXizHPhqG4RBu4lcypXaTmYBPYvk-992bcGXIlAlrljW3w?e=e3qmQu
 ## Link Overleaf Báo cáo - Cuốn:
 https://www.overleaf.com/read/zjhdvtgvcsqx#f70814
+## Link kết quả Thí nghiệm:
+https://drive.google.com/drive/folders/1RDcWoaIux5xo2iCeAKs7WC3yf1AIHnqL?usp=sharing
