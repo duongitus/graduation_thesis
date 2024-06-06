@@ -10,7 +10,6 @@ from ocpa.algo.enhancement.token_replay_based_performance.util import run_timed_
 from ocpa.objects.log.importer.csv.util import succint_mdl_to_exploded_mdl, clean_frequency, clean_arc_frequency
 from ocpa.algo.util.util import project_log
 
-
 def apply(ocpn, ocel, parameters=None):
     if parameters is None:
         parameters = {}
@@ -335,7 +334,7 @@ class PerformanceAnalysis:
         if len(R) > 0:
             start_times = [r.start for r in R]
             waiting = (
-                eo.event.vmap[ocpa_constants.DEFAULT_OCEL_START_TIMESTAMP_KEY] - min(start_times)).total_seconds()
+                eo.event.vmap[ocpa_constants.DEFAULT_OCEL_START_TIMESTAMP_KEY] - max(start_times)).total_seconds()
             if waiting < 0:
                 return None
             return waiting
@@ -351,7 +350,7 @@ class PerformanceAnalysis:
         if len(R) > 0:
             start_times = [r.start for r in R]
             sojourn = (
-                eo.event.time - min(start_times)).total_seconds()
+                eo.event.time - max(start_times)).total_seconds()
             if sojourn < 0:
                 return None
             return sojourn
@@ -388,6 +387,21 @@ class PerformanceAnalysis:
                 return None
             return lagging
 
+def human_readable_stat(c):
+    c = int(float(c))
+
+    days = c // 86400
+    hours = c // 3600 % 24
+    minutes = c // 60 % 60
+    seconds = c % 60
+
+    if days > 0:
+        return str(days) + "D " + str(hours) + "h " + str(minutes) + "m " + str(seconds) + "s"
+    if hours > 0:
+        return str(hours) + "h " + str(minutes) + "m " + str(seconds) + "s"
+    if minutes > 0:
+        return str(minutes) + "m " + str(seconds) + "s"
+    return str(seconds) + "s"
 
 def aggregate_stats(perf_records, elem, aggregation_measure):
     """
@@ -423,7 +437,7 @@ def aggregate_stats(perf_records, elem, aggregation_measure):
         aggr_stat = min(perf_records[elem])
     elif aggregation_measure == "max":
         aggr_stat = max(perf_records[elem])
-    # aggr_stat = human_readable_stat(aggr_stat)
+    aggr_stat = human_readable_stat(aggr_stat)
     return aggr_stat
 
 
@@ -467,7 +481,7 @@ def aggregate_ot_stats(perf_records, ot, elem, aggregation_measure):
     elif aggregation_measure == "max":
         if ot in perf_records:
             aggr_stat = max(perf_records[ot][elem])
-    # aggr_stat = human_readable_stat(aggr_stat)
+    aggr_stat = human_readable_stat(aggr_stat)
     return aggr_stat
 
 
