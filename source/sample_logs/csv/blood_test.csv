@@ -1,9 +1,0 @@
-﻿event_id,activity,test,sample,start,end
-e1,Prepare test,['T1'],[],0:00:00,0:00:15
-e2,Take sample,[],['S1'],0:02:00,0:02:30
-e3,Take sample,[],['S2'],0:02:30,0:02:45
-e5,Conduct test,['T1'],"['S1','S2']",0:03:00,0:04:00
-e6,Publish test,['T1'],[],0:04:30,0:05:00
-e7,Tranfer samples,[],"['S1','S2']",0:04:45,0:05:30
-e8,Clear sample,[],['S1'],0:05:30,0:05:45
-e9,Clear sample,[],['S2'],0:05:45,0:06:40
