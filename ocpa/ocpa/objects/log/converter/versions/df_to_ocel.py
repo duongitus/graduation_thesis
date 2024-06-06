@@ -90,13 +90,11 @@ def add_obj_attributes(
     object_types = pd.DataFrame(
         {oid: [obj.type] for oid, obj in objects_found_in_event_references.items()}
     ).T.rename(columns={"index": "object_id", 0: "object_type"})
-    # make join that adds an object type column to the objects (incl. attributes) table/dataframe
     objects_table = (
         objects_table.set_index("object_id")
         .join(object_types, on="object_id")
         .reset_index()
     )
-    # object attribute columns/names
     oa_cols = objects_table.columns[1:-1]
 
     def safe_isnan(x: Any) -> bool:
@@ -105,14 +103,6 @@ def add_obj_attributes(
         return False
 
     def get_ovmap(object_attribute_values: list[Any]) -> dict[str, Any]:
-        """
-        Impure utility function (uses oa_cols from outside the function)
-        that returns the ovmap given a list of object attribute values.
-        It only includes non-nan values (implying that each object type receives its own attributes*)
-
-        * Issue with this method is that if an object has a NULL/None/nan value for an attribute
-        that it should have, this attribute will be excluded from its OVMAP
-        """
 
         return {
             k: v
@@ -123,9 +113,6 @@ def add_obj_attributes(
     def create_obj(row: list[Any]) -> Obj:
         ovmap = get_ovmap(object_attribute_values=row[1:-1])
         return Obj(id=row[0], type=row[-1], ovmap=ovmap)
-
-    # create dict with filled with Obj found in objects_table (incl obj attributes),
-    # and merge it with the already existing dict of Obj objects (found in the events table)
     objects_found_in_event_references |= {
         row[0]: create_obj(row) for row in objects_table.values.tolist()
     }
@@ -143,8 +130,8 @@ def add_event(
         omap=[o for obj in obj_names for o in getattr(row, obj)],
         vmap={attr: getattr(row, attr) for attr in val_names},
     )
-    # add start time if exists, otherwise None for performance analysis
-    if "event_start_timestamp" in val_names:
+    if hasattr(row, "event_start_timestamp"): 
+
         events[str(index)].vmap["start_timestamp"] = pd.to_datetime(
             getattr(row, "event_start_timestamp")
         )
