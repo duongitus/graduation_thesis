@@ -4,7 +4,8 @@ https://docs.google.com/spreadsheets/d/19yALpYG8lvfqmi3mxassJJLJnxvhcD0A/edit?us
 ## Link Overleaf Đề cương:
 https://www.overleaf.com/read/hhtrnggcpdtw#423d42 
 ## Link Slide:
-https://studenthcmusedu-my.sharepoint.com/:p:/g/personal/20120166_student_hcmus_edu_vn/EXizHPhqG4RBu4lcypXaTmYBPYvk-992bcGXIlAlrljW3w?e=e3qmQu
+Bản cũ: https://studenthcmusedu-my.sharepoint.com/:p:/g/personal/20120166_student_hcmus_edu_vn/EXizHPhqG4RBu4lcypXaTmYBPYvk-992bcGXIlAlrljW3w?e=e3qmQu
+Bản mới nhất: https://studenthcmusedu-my.sharepoint.com/:p:/g/personal/20120063_student_hcmus_edu_vn/EbXvI1bh_3JLjz2K8ycrt6QBVLUrdlHz4iEmi1w7DJXHBg?e=iCxTVY
 ## Link Overleaf Báo cáo - Cuốn:
 https://www.overleaf.com/read/zjhdvtgvcsqx#f70814
 ## Link kết quả Thí nghiệm:
